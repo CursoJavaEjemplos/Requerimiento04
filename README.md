@@ -1,2 +1,3 @@
 # Requerimiento04
-Simple programa, herencia
+Simple programa, herencia y más.
+
