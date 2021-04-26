@@ -38,7 +38,7 @@ public class Sistema  {
         boolean verificarRequerimiento = rec.requerimiento04(456.4f);
         
         if(verificarRequerimiento==true) {
-            System.out.println("El área es mayor al valor permitido");
+            System.out.println("\nEl área es mayor al valor permitido.");
         }
         
     }
