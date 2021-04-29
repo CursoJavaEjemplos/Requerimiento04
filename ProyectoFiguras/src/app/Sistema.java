@@ -1,6 +1,10 @@
 package app;
 
 
+import appDatos.Rectangulo;
+
+import appDatos.Triangulo;
+
 import java.util.Scanner;
 
 public class Sistema  {
