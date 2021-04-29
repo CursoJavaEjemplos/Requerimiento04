@@ -1,4 +1,4 @@
-package app;
+package appDatos;
 
 
 public class Rectangulo extends Figura {
