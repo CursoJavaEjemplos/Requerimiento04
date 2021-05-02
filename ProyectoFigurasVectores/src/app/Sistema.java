@@ -8,9 +8,9 @@ import appDatos.Triangulo;
 import java.util.Scanner;
 
 public class Sistema  {
- 
-   private Triangulo tri = new Triangulo();
-   private Rectangulo rec = new Rectangulo();
+   private int N = 3;
+   private Triangulo tri[] = new Triangulo[N];
+   private Rectangulo rec[] = new Rectangulo[N];
  
     public Sistema() {
         super();
@@ -18,34 +18,50 @@ public class Sistema  {
     
     
     public void miMain() {
-
-        System.out.println("Cálculo del área de cuan rectángulo y un triangulo rectángulo");
-        Scanner teclado = new Scanner(System.in);
-        System.out.print("  Entrar la altura => ");
-        
-        Float altura = teclado.nextFloat();
-       
-        System.out.print("  Entrar la base => ");
-        Float base = teclado.nextFloat() ;
-        
-        rec.cargarDatos(altura, base);    
-        float resultadoRec = rec.calcular();
-
-        tri.cargarDatos(altura, base);    
-        float resultadoTri = tri.calcular();
-
-        
-        
-        System.out.println("\nÁrea del rectángulo = " + resultadoRec);
-        System.out.println("Área del triángulo rectángulo = " + resultadoTri);
-        
-        boolean verificarRequerimiento = rec.requerimiento04(456.4f);
-        
-        if(verificarRequerimiento==true) {
-            System.out.println("\nEl área es mayor al valor permitido.");
+        System.out.println("Cálculo del área de 3 rectángulo y 3 triangulo rectángulo");        
+        for(int i=0; i<N; i++) {
+            tri[i] = new Triangulo();
+            rec[i] = new Rectangulo();
         }
-        //
-        //hghg
+        Float base = null;
+        Float altura = null;
+        Scanner teclado=null;
+        Float resultadoRec = null;
+        Float resultadoTri = null;
+        int figuraN = 0;
+        teclado = new Scanner(System.in);
+        do {
+          try {
+            do {
+              System.out.print("  [0 salir] Entrar la altura para la figura" + figuraN + "=> ");
+              altura = teclado.nextFloat();
+              if(altura.equals(0.0f)) System.exit(0); //Quizás falta verificar números negativos 
+
+              System.out.print("  [0 salir] Entrar la base para la figura" + figuraN + "=> ");
+              base = teclado.nextFloat();
+              if(base.equals(0.0f)) System.exit(0); //Quizás falta verificar números negativos               
+
+              rec[figuraN].cargarDatos(altura, base);
+              resultadoRec = rec[figuraN].calcular();
+
+              tri[figuraN].cargarDatos(altura, base);     
+              resultadoTri = tri[figuraN].calcular();
+              figuraN=figuraN+1;
+            }while(figuraN==N);
+          }catch(Exception er) {
+            System.out.println("!Error: " + er.getMessage());
+          }
+        }while(figuraN==N);
         
+        for(int i=0; i<N; i++) {
+          System.out.println("\nÁrea del rectángulo N° " + i + " = " + rec[i].getResultado());
+          System.out.println("Área del triángulo rectángulo N° " + i + " = " + tri[i].getResultado());
+        
+          boolean verificarRequerimiento = rec[i].requerimiento04(456.4f);
+        
+          if(verificarRequerimiento==true) {
+            System.out.println("\nEl área es mayor al valor permitido.");
+          }
+        }
     }
 }
