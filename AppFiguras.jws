@@ -26,5 +26,6 @@
    </list>
    <list n="listOfChildren">
       <hash><url n="URL" path="ProyectoFiguras/ProyectoFiguras.jpr"/></hash>
+      <hash><url n="URL" path="ProyectoFigurasVectores/ProyectoFigurasVectores.jpr"/></hash>
    </list>
 </jws:workspace>
