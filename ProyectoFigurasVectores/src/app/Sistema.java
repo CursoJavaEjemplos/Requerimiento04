@@ -30,14 +30,15 @@ public class Sistema  {
         Float resultadoTri = null;
         int figuraN = 0;
         teclado = new Scanner(System.in);
+        //Ejemplo de cargar un vector con objetos
         do {
           try {
             do {
-              System.out.print("  [0 salir] Entrar la altura para la figura" + figuraN + "=> ");
+              System.out.print("  [0 salir] Entrar la altura para la figura " + figuraN + " => ");
               altura = teclado.nextFloat();
               if(altura.equals(0.0f)) System.exit(0); //Quizás falta verificar números negativos 
 
-              System.out.print("  [0 salir] Entrar la base para la figura" + figuraN + "=> ");
+              System.out.print("  [0 salir] Entrar la base para la figura " + figuraN + " => ");
               base = teclado.nextFloat();
               if(base.equals(0.0f)) System.exit(0); //Quizás falta verificar números negativos               
 
@@ -47,12 +48,15 @@ public class Sistema  {
               tri[figuraN].cargarDatos(altura, base);     
               resultadoTri = tri[figuraN].calcular();
               figuraN=figuraN+1;
-            }while(figuraN==N);
+            }while(figuraN < N);
           }catch(Exception er) {
-            System.out.println("!Error: " + er.getMessage());
+            System.out.println("!Error de entrada: " + er.getMessage());
+            teclado.nextLine(); //limpiar buffer del teclado
+            figuraN = 0;
           }
-        }while(figuraN==N);
+        }while(figuraN < N);
         
+        //Ejemplo de recorrer un vector de objetos
         for(int i=0; i<N; i++) {
           System.out.println("\nÁrea del rectángulo N° " + i + " = " + rec[i].getResultado());
           System.out.println("Área del triángulo rectángulo N° " + i + " = " + tri[i].getResultado());
