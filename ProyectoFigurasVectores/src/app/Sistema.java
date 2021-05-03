@@ -50,7 +50,7 @@ public class Sistema  {
               figuraN=figuraN+1;
             }while(figuraN < N);
           }catch(Exception er) {
-            System.out.println("!Error de entrada: " + er.getMessage());
+            System.out.println("Error de entrada, se espera un número: " + er.getMessage());
             teclado.nextLine(); //limpiar buffer del teclado
             figuraN = 0;
           }
