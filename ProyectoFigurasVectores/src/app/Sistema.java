@@ -36,11 +36,11 @@ public class Sistema  {
             do {
               System.out.print("  [0 salir] Entrar la altura para la figura " + figuraN + " => ");
               altura = teclado.nextFloat();
-              if(altura.equals(0.0f)) System.exit(0); //Quizás falta verificar números negativos 
+              if(altura.equals(0.0f)) System.exit(90); //Quizás falta verificar números negativos 
 
               System.out.print("  [0 salir] Entrar la base para la figura " + figuraN + " => ");
               base = teclado.nextFloat();
-              if(base.equals(0.0f)) System.exit(0); //Quizás falta verificar números negativos               
+              if(base.equals(0.0f)) System.exit(91); //Quizás falta verificar números negativos               
 
               rec[figuraN].cargarDatos(altura, base);
               resultadoRec = rec[figuraN].calcular();
