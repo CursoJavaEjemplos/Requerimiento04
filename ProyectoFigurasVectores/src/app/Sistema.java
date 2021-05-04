@@ -5,12 +5,15 @@ import appDatos.Rectangulo;
 
 import appDatos.Triangulo;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Sistema  {
    private int N = 3;
-   private Triangulo tri[] = new Triangulo[N];
+   
+   private Triangulo[] tri = new Triangulo[N];
    private Rectangulo rec[] = new Rectangulo[N];
+   
  
     public Sistema() {
         super();
@@ -18,18 +21,22 @@ public class Sistema  {
     
     
     public void miMain() {
-        System.out.println("Cálculo del área de 3 rectángulo y 3 triangulo rectángulo");        
+        System.out.println("Cálculo del área de 3 rectángulo y 3 triangulo rectángulo");   
+        
         for(int i=0; i<N; i++) {
             tri[i] = new Triangulo();
             rec[i] = new Rectangulo();
         }
+        
         Float base = null;
         Float altura = null;
         Scanner teclado=null;
         Float resultadoRec = null;
         Float resultadoTri = null;
         int figuraN = 0;
+        
         teclado = new Scanner(System.in);
+        
         //Ejemplo de cargar un vector con objetos
         do {
           try {
@@ -39,7 +46,9 @@ public class Sistema  {
               if(altura.equals(0.0f)) System.exit(90); //Quizás falta verificar números negativos 
 
               System.out.print("  [0 salir] Entrar la base para la figura " + figuraN + " => ");
+                
               base = teclado.nextFloat();
+                
               if(base.equals(0.0f)) System.exit(91); //Quizás falta verificar números negativos               
 
               rec[figuraN].cargarDatos(altura, base);
@@ -49,8 +58,12 @@ public class Sistema  {
               resultadoTri = tri[figuraN].calcular();
               figuraN=figuraN+1;
             }while(figuraN < N);
-          }catch(Exception er) {
-            System.out.println("Error de entrada, se espera un número: " + er.getMessage());
+          }catch(InputMismatchException err) {
+              System.out.println("Error de entrada, se espera un número: " + err.getMessage());
+              teclado.nextLine(); //limpiar buffer del teclado
+              figuraN = 0;              
+          }catch(Exception err) {
+            System.out.println("Error de entrada, se espera un número: " + err.getMessage());
             teclado.nextLine(); //limpiar buffer del teclado
             figuraN = 0;
           }

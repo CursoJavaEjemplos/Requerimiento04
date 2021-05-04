@@ -11,6 +11,8 @@ public class Sistema  {
  
    private Triangulo tri = new Triangulo();
    private Rectangulo rec = new Rectangulo();
+   
+   
  
     public Sistema() {
         super();
@@ -26,8 +28,13 @@ public class Sistema  {
         Float altura = teclado.nextFloat();
        
         System.out.print("  Entrar la base => ");
-        Float base = teclado.nextFloat() ;
+        Float base = null;
         
+        try {
+            base = teclado.nextFloat();
+        }catch(Exception err) {
+            
+        }
         rec.cargarDatos(altura, base);    
         float resultadoRec = rec.calcular();
 

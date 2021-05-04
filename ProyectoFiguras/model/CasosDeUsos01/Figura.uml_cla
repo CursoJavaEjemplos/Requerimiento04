@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmlns:xmi='http://www.omg.org/spec/XMI/20131001' xmlns:uml='http://www.omg.org/spec/UML/20131001'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='12.2.1.3.0'/>
+ <uml:Class xmi:type='uml:Class' xmi:uuid='urn:uuid:8394fdea-be71-40e7-a84f-445b9d4ad43e'
+   isAbstract='false'
+   isActive='false'
+   isFinalSpecialization='false'
+   isLeaf='false'
+   name='Figura'
+   visibility='public'>
+  <useCase href='urn:uuid:4fa48f44-9c07-48bd-9e47-124db65054ae'/>
+  <ownedComment xmi:type='uml:Comment' xmi:uuid='urn:uuid:fa32a1f5-868b-434a-bd87-432a2a7faef8'
+    body='uml_uc:Subject'/>
+ </uml:Class>
+</xmi:XMI>

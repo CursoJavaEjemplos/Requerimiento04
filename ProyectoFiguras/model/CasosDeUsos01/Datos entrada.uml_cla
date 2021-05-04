@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmlns:xmi='http://www.omg.org/spec/XMI/20131001' xmlns:uml='http://www.omg.org/spec/UML/20131001'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='12.2.1.3.0'/>
+ <uml:Class xmi:type='uml:Class' xmi:uuid='urn:uuid:f6a24e9f-ee65-4076-969e-fddd1744cb37'
+   isAbstract='false'
+   isActive='false'
+   isFinalSpecialization='false'
+   isLeaf='false'
+   name='Datos entrada'
+   visibility='public'>
+  <useCase href='urn:uuid:56d39787-609f-4878-b307-ff9124b3d5bf'/>
+  <useCase href='urn:uuid:bbc04991-84f3-4763-a9cd-b53242e5ab68'/>
+  <useCase href='urn:uuid:41f1c531-6a0b-4c48-be4e-6bf551a0b12e'/>
+  <ownedComment xmi:type='uml:Comment' xmi:uuid='urn:uuid:43c8b0c0-ca93-4dde-af57-1d5ed50eeb74'
+    body='uml_uc:Subject'/>
+ </uml:Class>
+</xmi:XMI>
